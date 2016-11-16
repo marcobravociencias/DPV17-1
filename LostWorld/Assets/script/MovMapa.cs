@@ -22,11 +22,51 @@ public class MovMapa : MonoBehaviour {
 
 	    movement *= Time.deltaTime;
 	    transform.Translate(movement);
-
+	    //float camX = Camera.main.transform.position.x;
+	    //float camY = Camera.main.transform.position.y;
+	    /* if (dentro(0.001f)){
+	    	seMueveCamara = false;
+	    }else{
+	    	seMueveCamara = true;
+	    }*/
 	    // Move the camera
+	    dentro(0.05f);
+	    //float tamaño = 0.05f;
+	    
+		//Debug.Log (seMueveCamara);
+
+
 	    if (seMueveCamara)
 	    {
 	      Camera.main.transform.Translate(movement);
 	    }
+  	}
+
+  	void dentro(float tamaño){
+  		float camX = Camera.main.transform.position.x;
+	    //Debug.Log (camX);
+	    float camY = Camera.main.transform.position.y;
+	    //Debug.Log (camY);
+	    float posX = transform.position.x;
+	    //Debug.Log (posX);
+		float posY = transform.position.y;
+		//Debug.Log (posY);
+		float LI = camY - tamaño;
+		//Debug.Log (LI);
+		float LS = camY + tamaño;
+		//Debug.Log (LS);
+		float LIz = camX - tamaño;
+		//Debug.Log (LIz);
+		float LD = camX + tamaño;
+		//Debug.Log (LD);
+			
+		if (posX < LD && posX > LIz){
+			if (posY > LI && posY < LS){
+				seMueveCamara =  true;
+			}
+		}else{
+			seMueveCamara =  false;			
+		}
+
   	}
 }

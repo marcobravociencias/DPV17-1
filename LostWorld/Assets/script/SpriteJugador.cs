@@ -61,11 +61,13 @@ public class SpriteJugador : MonoBehaviour {
 				spriteRenderer.sprite = sprite2;
 			} else if (spriteRenderer.sprite == sprite2) {
 				spriteRenderer.sprite = sprite1;
+			}else{
+				spriteRenderer.sprite = sprite0;
 			}	
 		}
-		if (Input.GetAxis ("Vertical") == 0) {
+		/*if (Input.GetAxis ("Vertical") == 0) {
 			spriteRenderer.sprite = sprite0;
-		}
+		}*/
 	}
 
 	void CambiaArriba (){
@@ -82,11 +84,14 @@ public class SpriteJugador : MonoBehaviour {
 				spriteRenderer.sprite = sprite5;
 			} else if (spriteRenderer.sprite == sprite5) {
 				spriteRenderer.sprite = sprite4;
+			}else{
+				spriteRenderer.sprite = sprite3;
 			}	
 		}
-		if (Input.GetAxis ("Vertical") == 0 ) {
+
+		/*if (Input.GetKeyUp (KeyCode.UpArrow)) {
 			spriteRenderer.sprite = sprite3;
-		}
+		}*/
 	}
 
 	void CambiaDerecha (){
@@ -103,11 +108,13 @@ public class SpriteJugador : MonoBehaviour {
 				spriteRenderer.sprite = sprite8;
 			} else if (spriteRenderer.sprite == sprite8) {
 				spriteRenderer.sprite = sprite7;
-			}	
+			}else{
+				spriteRenderer.sprite = sprite6;
+			}
 		}
-		if (Input.GetAxis ("Horizontal") == 0 ) {
+		/*if (Input.GetAxis ("Horizontal") == 0 ) {
 			spriteRenderer.sprite = sprite6;
-		}
+		}*/
 		//spriteRenderer.flipX = false;
 	}
 
@@ -125,10 +132,12 @@ public class SpriteJugador : MonoBehaviour {
 				spriteRenderer.sprite = sprite8;
 			} else if (spriteRenderer.sprite == sprite8) {
 				spriteRenderer.sprite = sprite7;
+			}else{
+				spriteRenderer.sprite = sprite6;
 			}	
 		}
-		if (Input.GetAxis ("Horizontal") == 0 ) {
+		/*if (Input.GetAxis ("Horizontal") == 0 ) {
 			spriteRenderer.sprite = sprite6;
-		}
+		}*/
 	}
 }
