@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MovMapa : MonoBehaviour {
 	public float velocidad = 0.3f;
-  	public bool seMueveCamara = false;
+  public bool seMueveCamara = false;
+  public float rango = 0.05f;
 	// Use this for initialization
 	void Start () {
 		
@@ -30,16 +31,16 @@ public class MovMapa : MonoBehaviour {
 	    	seMueveCamara = true;
 	    }*/
 	    // Move the camera
-	    dentro(0.05f);
+	    //dentro(rango);
 	    //float tamaño = 0.05f;
 	    
 		//Debug.Log (seMueveCamara);
 
 
-	    if (seMueveCamara)
+	    /*if (seMueveCamara)
 	    {
 	      Camera.main.transform.Translate(movement);
-	    }
+	    }*/
   	}
 
   	void dentro(float tamaño){
@@ -65,7 +66,7 @@ public class MovMapa : MonoBehaviour {
 				seMueveCamara =  true;
 			}
 		}else{
-			seMueveCamara =  false;			
+			//seMueveCamara =  false;			
 		}
 
   	}

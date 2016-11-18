@@ -42,7 +42,7 @@ public class SpriteJugador : MonoBehaviour {
 					yield return new WaitForSeconds(velocidadCambio);
 				}	
 			}
-			yield return new WaitForSeconds(velocidadCambio*0);
+			yield return new WaitForSeconds(velocidadCambio);
         }
         //yield return new WaitForSeconds(velocidadCambio);
     }

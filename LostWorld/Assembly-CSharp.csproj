@@ -46,7 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\CambioEscena.cs" />
+     <Compile Include="Assets\script\CameraFollow.cs" />
      <Compile Include="Assets\script\MovMapa.cs" />
+     <Compile Include="Assets\script\MyUnitySingleton.cs" />
      <Compile Include="Assets\script\SpriteJugador.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
