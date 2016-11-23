@@ -1,3 +1,5 @@
 # Ignora todos archivo generados automatiamente por unity al crear scripts.
 *.*meta
 *.meta
+*.rar
+*.tar.gz
