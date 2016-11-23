@@ -23,6 +23,11 @@ public class DisparoPreFab : MonoBehaviour {
 			spriteRenderer.flipX = true;
 		}
 	}
+	void OnTriggerEnter2D(Collider2D collider){
+		if (collider != null){
+			Destroy (this.gameObject);
+		}
+	}
 
 	void OnCollisionEnter2D(Collision2D colision){
 		//Enemigo enemigo = colision.GetComponent<Enemigo> ();
