@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene/Casas.unity
+- path: Assets/scene/Batalla.unity
   isLoaded: 1
   isActive: 1

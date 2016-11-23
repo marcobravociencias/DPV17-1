@@ -17,6 +17,9 @@ public class CambioEscena : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "Player"){
+			if( gameObject.tag == "Enemigo"){
+				Application.LoadLevel("Batalla");
+			}
 			if( gameObject.tag == "Salida"){
 				//Application.LoadLevel(Application.loadedLevelName);
 				if (Application.loadedLevelName == "Casas"){
@@ -30,12 +33,13 @@ public class CambioEscena : MonoBehaviour {
 			if( gameObject.tag == "Entrada"){
 				//Application.LoadLevel(Application.loadedLevelName);
 				if (Application.loadedLevelName == "Bosque"){
-					Application.LoadLevel("CasasR0Bosque");
+					Application.LoadLevel("Casas");
 
 
 					//Vector3 movement = new Vector3 (-1f, 0, player.position.z);
 					//player.transform.Translate(movement);
 				}
+
 			}
 			if( gameObject.tag == "EntradaCasa"){
 				if (gameObject.name == "EntradaCasa1"){
@@ -47,9 +51,24 @@ public class CambioEscena : MonoBehaviour {
 				if (gameObject.name == "EntradaCasaLab"){
 					Application.LoadLevel("Casa2");	
 				}
+				if(gameObject.name == "SubeCasa1"){
+					Application.LoadLevel("Casa1_a");
+				}
+				if(gameObject.name == "SubeCasa2"){
+					Application.LoadLevel("Casa2_a");
+				}
+				if(gameObject.name == "BajaCasa1"){
+					Application.LoadLevel("Casa1");
+				}
+				if(gameObject.name == "BajaCasa2"){
+					Application.LoadLevel("Casa2");
+				}
 				//Application.LoadLevel(Application.loadedLevelName);
-				
 			}
+			if (gameObject.tag == "SalidaCasa"){
+					Application.LoadLevel("Casas");
+			}
+
 		}
 	}
 }
