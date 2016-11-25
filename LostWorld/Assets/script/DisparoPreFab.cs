@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DisparoPreFab : MonoBehaviour {
+	//[RequireComponent(typeof(AudioSource))]
 	public float velocidad = 10.0f;
 	public int danio = 1;
 	public bool izq = false;
 	private SpriteRenderer spriteRenderer;
 	// Use this for initialization
 	void Start () {
+		//AudioSource audio = GetComponent<AudioSource>();
+        //audio.Play();
+        //audio.Play(44100);
 		StartCoroutine (Destruye ());
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
@@ -34,6 +38,10 @@ public class DisparoPreFab : MonoBehaviour {
 		//if (enemigo != null) {
 		//	enemigo.danio (danio);
 		//}
+		SuperBasicAI boss = GetComponent<SuperBasicAI> ();
+		if (boss != null) {
+			boss.danio (danio);
+		}
 		if (colision != null){
 			Destroy (this.gameObject);
 		}

@@ -6,7 +6,7 @@ public class SuperBasicAI : MonoBehaviour {
 	public float speed;
 	public bool hitLimit;
 	public bool isFacingLeft;
-	
+	public int vida;
 	private float moveX;
 	private float moveY;
 	private Rigidbody2D rigidBody2D;
@@ -18,6 +18,7 @@ public class SuperBasicAI : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		moveX = 0.1f;
 		moveY = 0.0f;
+		vida = 10;
 	}
 	
 	// Update is called once per frame
@@ -57,5 +58,18 @@ public class SuperBasicAI : MonoBehaviour {
 	private void FlipRight() {
 		isFacingLeft = false;
 		spriteRenderer.flipX = false;
+	}
+
+	public void danio(int golpe){
+		vida -= golpe;
+		muerte ();
+		Debug.Log ("Vida Boss " + vida);
+	}
+	
+	private void muerte(){
+		if (vida == 0) {
+			//Application.LoadLevel (2);
+			Debug.Log ("¡¡¡ Haz Ganado Perro !!!");
+		}
 	}
 }

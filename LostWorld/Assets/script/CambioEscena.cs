@@ -23,6 +23,8 @@ public class CambioEscena : MonoBehaviour {
 			if( gameObject.tag == "Salida"){
 				//Application.LoadLevel(Application.loadedLevelName);
 				if (Application.loadedLevelName == "Casas"){
+					//PosPlayer.corX = col.gameObject.transform.position.x;
+					//PosPlayer.corY = col.gameObject.transform.position.y;
 					Application.LoadLevel("Bosque");
 				}
 				if (Application.loadedLevelName == "CasasR0Bosque"){
@@ -33,6 +35,9 @@ public class CambioEscena : MonoBehaviour {
 			if( gameObject.tag == "Entrada"){
 				//Application.LoadLevel(Application.loadedLevelName);
 				if (Application.loadedLevelName == "Bosque"){
+					//PosPlayer.corX = 0.17f;
+					//PosPlayer.corY = 1.96f;
+
 					Application.LoadLevel("Casas");
 
 

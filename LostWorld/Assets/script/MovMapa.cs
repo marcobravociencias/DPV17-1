@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovMapa : MonoBehaviour {
+	
 	public float velocidad = 0.3f;
-  public bool seMueveCamara = false;
-  public float rango = 0.05f;
+  	public bool seMueveCamara = false;
+  	public float rango = 0.05f;
 	// Use this for initialization
 	void Start () {
 		
+		transform.position = transform.TransformPoint (new Vector3(PosPlayer.corX, PosPlayer.corY, transform.position.z));	
 	}
 	
 	// Update is called once per frame
