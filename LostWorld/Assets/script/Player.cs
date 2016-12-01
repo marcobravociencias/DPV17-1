@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	[SerializeField] private GameObject disparoPrefab;
+	[SerializeField] private GameObject disparoSalida;
 	//public static float corX = 0f;
 	//public static float corY = 0f;
 	
 
 	//private GameObject disparo;
-	private int vida;
+	public int vida;
 	//public Movement mov = GetComponent<Movement>();
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,9 @@ public class Player : MonoBehaviour {
         	//audio.Play(44100);
         	audio.PlayDelayed(0f);
 			GameObject disparo = Instantiate (disparoPrefab) as GameObject;
-			//disparo.transform.Translate (15 * Time.deltaTime, 0, 0);
+			
+			//GameObject disparoSal = Instantiate (disparoSalida) as GameObject;//Animacion de disparo.
+				//disparo.transform.Translate (15 * Time.deltaTime, 0, 0);
 			Movement mov = GetComponent<Movement>(); 
 			DisparoPreFab dir = disparo.GetComponent<DisparoPreFab>();
 			int i = 1;
@@ -47,6 +50,7 @@ public class Player : MonoBehaviour {
 				//Debug.Log ("¡¡¡ Haz Muerto Perro !!!");
 			}
 			if (mov.anim.GetBool("Run")){
+				//disparoSal.transform.position =this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0)); 
 				disparo.transform.position = this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0));
 			}else{
 				disparo.transform.position = this.transform.TransformPoint (new Vector3 (1.5f * i, 0.3f, 0));
@@ -63,7 +67,6 @@ public class Player : MonoBehaviour {
 
 	public void danio(int golpe){
 		vida -= golpe;
-		muerte ();
 		Debug.Log ("Vida " + vida);
 	}
 	
@@ -72,6 +75,12 @@ public class Player : MonoBehaviour {
 			//Application.LoadLevel (2);
 			Debug.Log ("¡¡¡ Haz Muerto Perro !!!");
 		}
+	}
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		if(other.tag == "BossAtack")
+		this.danio(1);
+		muerte ();
 	}
 	
 }

@@ -18,6 +18,7 @@ public class CambioEscena : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag == "Player"){
 			if( gameObject.tag == "Enemigo"){
+				
 				Application.LoadLevel("Batalla");
 			}
 			if( gameObject.tag == "Salida"){

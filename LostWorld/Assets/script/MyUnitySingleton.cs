@@ -17,6 +17,10 @@ public class MyUnitySingleton : MonoBehaviour {
          instance = this;
      }
      DontDestroyOnLoad(this.gameObject);
+     if (Application.loadedLevelName == "Batalla"){
+		AudioSource audio = GetComponent<AudioSource>();
+		audio.Pause();
+     }
  }
 
 }
