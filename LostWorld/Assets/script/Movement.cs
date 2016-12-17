@@ -60,12 +60,21 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		if(other.tag == "Ground")
+		if(other.tag == "Ground"){
 			isGrounded = true;
+		}
+		if(other.tag == "GroundEnemy"){
+			isGrounded = true;
+		}
 	}
 
 	public void OnTriggerExit2D(Collider2D other) {
-		if(other.tag == "Ground")
+		if(other.tag == "Ground"){
 			isGrounded = false;
+		}
+		if(other.tag == "GroundEnemy"){
+			isGrounded = true;
+		}
+
 	}
 }

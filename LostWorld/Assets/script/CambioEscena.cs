@@ -55,7 +55,7 @@ public class CambioEscena : MonoBehaviour {
 					Application.LoadLevel("Casa2");	
 				}
 				if (gameObject.name == "EntradaCasaLab"){
-					Application.LoadLevel("Casa2");	
+					//Application.LoadLevel("Casa2");	
 				}
 				if(gameObject.name == "SubeCasa1"){
 					Application.LoadLevel("Casa1_a");

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private GameObject disparoSalida;
 	//public static float corX = 0f;
 	//public static float corY = 0f;
+	private GameObject disparoEfecto;
 	
 
 	//private GameObject disparo;
@@ -38,9 +39,12 @@ public class Player : MonoBehaviour {
         	//audio.Play(44100);
         	audio.PlayDelayed(0f);
 			GameObject disparo = Instantiate (disparoPrefab) as GameObject;
-			
-			//GameObject disparoSal = Instantiate (disparoSalida) as GameObject;//Animacion de disparo.
-				//disparo.transform.Translate (15 * Time.deltaTime, 0, 0);
+			/*if (disparoEfecto == null) {
+				GameObject disparoEfecto = Instantiate (disparoSalida) as GameObject;//Animacion de disparo.
+				disparoEfecto.transform.localScale += new Vector3(1.5f, 1.5f, 0);
+				disparoEfecto.transform.Translate (15 * Time.deltaTime, 0, 0);
+				disparo.transform.Translate (15 * Time.deltaTime, 0, 0);
+			}*/
 			Movement mov = GetComponent<Movement>(); 
 			DisparoPreFab dir = disparo.GetComponent<DisparoPreFab>();
 			int i = 1;
@@ -50,9 +54,11 @@ public class Player : MonoBehaviour {
 				//Debug.Log ("¡¡¡ Haz Muerto Perro !!!");
 			}
 			if (mov.anim.GetBool("Run")){
-				//disparoSal.transform.position =this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0)); 
+				//disparoEfecto.transform.position =this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0)); 
 				disparo.transform.position = this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0));
 			}else{
+				//disparoEfecto.transform.position =this.transform.TransformPoint (new Vector3 (1.5f * i, 0.9f, 0)); 
+
 				disparo.transform.position = this.transform.TransformPoint (new Vector3 (1.5f * i, 0.3f, 0));
 			}
 			
@@ -74,6 +80,7 @@ public class Player : MonoBehaviour {
 		if (vida == 0) {
 			//Application.LoadLevel (2);
 			Debug.Log ("¡¡¡ Haz Muerto Perro !!!");
+			Application.LoadLevel("Batalla");
 		}
 	}
 

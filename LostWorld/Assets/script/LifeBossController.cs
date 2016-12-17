@@ -13,22 +13,23 @@ public class LifeBossController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		SuperBasicAI cara = GetComponent<SuperBasicAI>();
-		bool face = cara.isFacingLeft;
+		//SuperBasicAI cara = GetComponent<SuperBasicAI>();
+		//bool face = cara.isFacingLeft;
 		
-		Debug.Log (face);
+		//Debug.Log (face);
 		if(lifePoints <= 0) {
 			foreach(CanonController canon in canonList){
 				canon.activate = false;
-				
+				Application.LoadLevel("Casa2_aWin");	
 			}
+
 			Destroy(this.gameObject);	
 			// Aqui definimos que hacer cuando muera.
 		}
 
 		// Definimos en que momento se entra a las fases del boss
 		// con mas if else.
-		if(lifePoints <= 90) {
+		if(lifePoints <= 95) {
 			foreach(CanonController canon in canonList)
 				canon.activate = true;
 			// Aqui definimos que hacer cuando muera.
@@ -39,7 +40,7 @@ public class LifeBossController : MonoBehaviour {
 				canon.shootRate = 0.5f;
 			// Aqui definimos que hacer cuando muera.
 		}
-		if(lifePoints <= 20) {
+		if(lifePoints <= 5) {
 			foreach(CanonController canon in canonList)
 				canon.shootRate = 0f;
 				//StopCoroutine(locura);
